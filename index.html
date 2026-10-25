@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VERFORM COPILOT</title>
+<meta name="description" content="Distinte treno per Verform consultabili offline">
+<meta name="theme-color" content="#05080b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#dde3e9" media="(prefers-color-scheme: light)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== HOME ===== -->
+  <main id="home">
+    <header class="head">
+      <div class="top-row">
+        <div><div class="trainno">VERFORM COPILOT</div><div class="route">Distinte treno offline</div></div>
+        <div class="tools">
+          <span class="net" id="net"></span>
+          <button class="chip" type="button" data-cmd="theme" aria-label="Cambia tema giorno/notte">☀️/🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="agg" hidden></div>
+
+    <section class="card" aria-labelledby="hTreni">
+      <div class="card-head"><h2 id="hTreni">Treni salvati</h2>
+        <label class="btn primary file-btn">Importa pacchetto<input type="file" id="fImport" accept=".json,.vf.json,application/json" multiple hidden></label>
+      </div>
+      <div id="sospesi" hidden></div>
+      <div id="treni" class="menu"></div>
+      <p class="note" id="storeInfo"></p>
+    </section>
+
+    <section class="card">
+      <details><summary class="sum">Impostazioni e informazioni</summary>
+        <p class="note">Versione app <span id="ver"></span> · formato pacchetto v1. I pacchetti e le spunte restano solo in questo telefono.</p>
+        <p class="note" id="offInfo"></p>
+      </details>
+    </section>
+    <footer>Strumento di consultazione: fanno fede le lettere di vettura, le liste carri e i documenti originali.</footer>
+  </main>
+
+  <!-- ===== TRENO ===== -->
+  <main id="treno" hidden>
+    <header class="head sticky" id="tHead">
+      <div class="top-row">
+        <button class="back" type="button" data-cmd="home">‹ Treni</button>
+        <div class="tools"><span class="net" id="net2"></span>
+          <button class="chip" type="button" data-cmd="theme" aria-label="Cambia tema giorno/notte">☀️/🌙</button></div>
+      </div>
+      <div><div class="trainno" id="tNum"></div><div class="route" id="tRel"></div></div>
+      <div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+      <div class="stats"><span id="progressTxt"></span><span id="tRev"></span></div>
+      <nav class="jump" id="jump" aria-label="Sezioni"></nav>
+      <div class="tools">
+        <button class="chip" type="button" data-cmd="next">Prossimo ↓</button>
+        <button class="chip" id="btnHide" type="button" aria-pressed="false">Nascondi fatti</button>
+        <button class="chip" type="button" data-cmd="reset">Azzera</button>
+      </div>
+    </header>
+    <div id="tBody"></div>
+    <footer>Strumento di consultazione: fanno fede le lettere di vettura, le liste carri e i documenti originali.</footer>
+  </main>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="toast" id="toast" hidden role="status"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" hidden><div class="sheet-in" id="sheetIn"></div></div>
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
