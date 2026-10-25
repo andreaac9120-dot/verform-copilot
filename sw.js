@@ -2,7 +2,7 @@
 // Cache con prefisso proprio: non tocca le cache di ADC COPILOT o di altre app sullo stesso dominio.
 // A ogni rilascio cambia VER: la nuova versione si scarica intera e si attiva solo con "Aggiorna ora".
 const NS = "verform-copilot-";
-const VER = NS + "shell-1.0.0";
+const VER = NS + "shell-1.0.1";
 const FONT = NS + "font";
 const CONDIVISI = NS + "condivisi";
 const SHELL = ["./", "index.html", "style.css", "db.js", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "icon-maskable-512.png"];

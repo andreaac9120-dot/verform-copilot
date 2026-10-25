@@ -1,5 +1,5 @@
 // VERFORM COPILOT – archivio treni, import dei pacchetti .vf.json, checklist offline per l'inserimento in Verform.
-const VERSION = "1.0.0";
+const VERSION = "1.0.1";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const t3 = kg => (Number(kg || 0) / 1000).toFixed(3).replace(".", ",");
